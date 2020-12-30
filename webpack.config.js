@@ -26,12 +26,12 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin([
+        new HtmlWebpackPlugin(
             {
                 inject: true,
                 template: './public/index.html',
                 filename: './index.html'
             }
-        ]) //Permite trabajar con los archivos HTML
+        ) //Permite trabajar con los archivos HTML
     ]
 }
