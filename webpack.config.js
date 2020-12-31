@@ -3,6 +3,7 @@
 //nos permite acceder hacia donde estamos dentro de las carpetas sea donde sea
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 //Aquí se encuentra toda la configuración de lo que va a suceder. Modulo para exportar.
 module.exports = {
@@ -32,6 +33,10 @@ module.exports = {
                 template: './public/index.html',
                 filename: './index.html'
             }
-        ) //Permite trabajar con los archivos HTML
+        ), //Permite trabajar con los archivos HTML
+        new CopyWebpackPlugin({
+            patterns: [{from: './src/styles/styles.css',
+                        to: '' }],
+        })
     ]
 }
